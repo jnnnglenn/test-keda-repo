@@ -4,8 +4,8 @@ metadata:
    name: http-app-scaledobject
    annotations:
     #ask me before changing
-    #autoscaling.keda.sh/paused-replicas: 3
-    #autoscaling.keda.sh/paused: true
+    autoscaling.keda.sh/paused-replicas: 3
+    autoscaling.keda.sh/paused: true
 spec:
    scaleTargetRef:
       name: http-app
