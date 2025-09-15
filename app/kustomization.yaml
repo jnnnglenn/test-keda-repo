@@ -6,4 +6,4 @@ resources:
   - scaledobject.yaml
   - nginx1.yaml
   - nginx2.yaml
-  - nginx2-scaledobject.yaml
+  # - nginx2-scaledobject.yaml
