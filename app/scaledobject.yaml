@@ -4,18 +4,17 @@ metadata:
    name: http-app-scaledobject
    annotations:
     #ask me before changing
-    autoscaling.keda.sh/paused-replicas: 3
-    autoscaling.keda.sh/paused: true
+    #autoscaling.keda.sh/paused-replicas: 3
+    #autoscaling.keda.sh/paused: true
 spec:
    scaleTargetRef:
       name: http-app
-   minReplicaCount: 1
-   maxReplicaCount: 10
+   minReplicaCount: 3
+   maxReplicaCount: 3
    triggers:
       - type: prometheus
         metadata:
            serverAddress: http://prometheus-server.default.svc.cluster.local:80
            metricName: http_requests_total
            threshold: '5'
-           query: sum(rate(http_requests_total[1m])) 
-
+           query: sum(rate(http_requests_total[1m]))
