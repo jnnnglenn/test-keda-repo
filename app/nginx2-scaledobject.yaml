@@ -5,8 +5,8 @@ metadata:
 spec:
   scaleTargetRef:
     name: nginx-app-2
-  minReplicaCount: 1
-  maxReplicaCount: 4
+  minReplicaCount: 4
+  maxReplicaCount: 6
   triggers:
   - type: cpu
     metricType: Utilization # This means we're scaling on average CPU percentage
