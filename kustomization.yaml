@@ -1,19 +1,6 @@
-
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 
 # 1. Your application's resources
 resources:
   - app/
-
-# 2. Prometheus Helm chart
-helmCharts:
-- name: prometheus
-  repo: https://prometheus-community.github.io/helm-charts
-  version: "25.20.0" # Using a recent, stable version
-  releaseName: prometheus
-  namespace: default # You can change this to a 'monitoring' namespace if you prefer
-  valuesInline:
-    server:
-      global:
-        scrape_interval: 1m # Match the scrape interval with your ScaledObject query
