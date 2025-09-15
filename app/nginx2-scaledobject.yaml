@@ -1,0 +1,14 @@
+apiVersion: keda.sh/v1alpha1
+kind: ScaledObject
+metadata:
+  name: nginx-app-2-scaledobject
+spec:
+  scaleTargetRef:
+    name: nginx-app-2
+  minReplicaCount: 1
+  maxReplicaCount: 4
+  triggers:
+  - type: cpu
+    metricType: Utilization # This means we're scaling on average CPU percentage
+    metadata:
+      value: "80" # Target CPU utilization percentage to trigger scaling
